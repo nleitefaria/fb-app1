@@ -8,7 +8,7 @@ import { environment } from '../../environments/environment';
 @Injectable()
 export class SourcesService {
 
-  	private BASE_URL:string = 'http://api.worldbank.org/v2/';
+  	private BASE_URL:string = 'https://api.worldbank.org/v2/';
 
   	constructor(private http:Http) { }
   	
