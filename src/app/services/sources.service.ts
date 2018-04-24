@@ -6,11 +6,13 @@ import 'rxjs/add/operator/catch';
 import { environment } from '../../environments/environment';
 
 @Injectable()
-export class SourcesService {
+export class SourcesService
+{
+  	private BASE_URL:string = environment.apiUrl;
 
-  	private BASE_URL:string = 'https://api.worldbank.org/v2/';
-
-  	constructor(private http:Http) { }
+  	constructor(private http:Http) 
+  	{ 
+  	}
   	
   	public getSources(page : Number):any
     { 	
