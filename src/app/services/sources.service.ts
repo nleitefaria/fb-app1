@@ -20,5 +20,12 @@ export class SourcesService
 			.map((response:Response) => response.json())
 			.catch((error:any) => Observable.throw(error.json().error) || 'Server Error');
 	}
+	
+	public getOne(id:Number):any{
+		return this.http.get(`${this.BASE_URL}sources/${id}?format=JSON`)
+		//return this.http.get(`https://api.worldbank.org/v2/sources/11?format=JSON`)
+			.map((response:Response) => response.json())
+			.catch((error:any) => Observable.throw(error.json().error) || 'Server Error');
+	}
 
 }
