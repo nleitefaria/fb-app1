@@ -20,5 +20,11 @@ export class CountriesService
 			.map((response:Response) => response.json())
 			.catch((error:any) => Observable.throw(error.json().error) || 'Server Error');
 	}
+	
+	public getOne(id : string):any{
+		return this.http.get(`${this.BASE_URL}countries/${id}?format=JSON`)
+			.map((response:Response) => response.json())
+			.catch((error:any) => Observable.throw(error.json().error) || 'Server Error');
+	}
 
 }

@@ -1,0 +1,52 @@
+<br>
+<div class="container">
+<ol class="breadcrumb">
+  <li class="breadcrumb-item"><a href="">Home</a></li>
+  <li class="breadcrumb-item"><a href="/countries">Countries</a></li>
+  <li class="breadcrumb-item active">{{id}}</li>
+</ol>
+</div>
+<br>
+<div class="container">
+<table class="table">
+    <tbody>
+      <tr>
+        <td>ID</td>
+        <td>{{country?.id}}</td>     
+      </tr>
+      <tr>
+        <td>Iso2Code</td>
+        <td>{{country?.iso2Code}}</td>
+      </tr>      
+      <tr>
+        <td>Name</td>
+        <td>{{country?.name}}</td>
+      </tr>
+      <tr>
+        <td>Capital City</td>
+        <td>{{country?.capitalCity}}</td>
+      </tr> 
+      <tr>
+        <td>Region</td>
+        <td>{{country?.region.value}}</td>
+      </tr>
+      <tr>
+        <td>Longitude</td>
+        <td>{{country?.longitude}}</td>
+      </tr> 
+      <tr>
+        <td>Latitude</td>
+        <td>{{country?.latitude}}</td>
+      </tr>
+      <tr>
+        <td>Income Level</td>
+        <td>{{country?.incomeLevel.value}}</td>
+      </tr>
+      <tr>
+        <td>Lending Type</td>
+        <td>{{country?.lendingType.value}}</td>
+      </tr>          
+    </tbody>
+  </table>
+  <a href="/countries" class="btn btn-primary" role="button">Back</a>
+</div>
