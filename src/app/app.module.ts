@@ -9,13 +9,15 @@ import { AppComponent } from './app.component';
 import { SourcesComponent } from './components/sources/sources.component';
 import { SourcesDetailsComponent } from './components/sources/sources-details.component';
 import { CountriesComponent } from './components/countries/countries.component';
+import { CountriesDetailsComponent } from './components/countries/countries-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SourcesComponent,
     SourcesDetailsComponent,
-    CountriesComponent
+    CountriesComponent,
+    CountriesDetailsComponent
   ],
   imports: [
     BrowserModule,
