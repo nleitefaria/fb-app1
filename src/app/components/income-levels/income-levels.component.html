@@ -1,0 +1,35 @@
+<br>
+<div class="container">
+<ol class="breadcrumb">
+  <li class="breadcrumb-item"><a href="">Home</a></li>
+  <li class="breadcrumb-item active">{{location}}</li>
+</ol>
+</div>
+<div class="container">
+<table class="table">
+  <thead>
+    <tr>     
+      <th scope="col">ID</th>
+      <th scope="col">Iso2Code</th>
+      <th scope="col">Value</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let incomeLevel of incomeLevels | paginate: { id: 'server', itemsPerPage: 10, currentPage: p, totalItems: total }">
+      <td>{{incomeLevel.id}}</td>
+      <td>{{incomeLevel.iso2code}}</td>
+      <td>{{incomeLevel.value}}</td>
+      <td><a href="income-levels-details/{{incomeLevel.iso2Code}}" class="btn btn-primary">View Countries</a></td>
+    </tr>
+  </tbody>
+</table>
+<div>
+    <div *ngIf="loading" > 
+  		<strong>Loading data. Please wait ...</strong>	
+	</div> 
+	<div *ngIf="!loading" > 
+		<pagination-controls (pageChange)="getPage($event)" id="server"></pagination-controls>
+	</div> 	 
+</div>
+</div>
