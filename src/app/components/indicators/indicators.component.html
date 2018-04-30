@@ -11,22 +11,16 @@
     <tr>     
       <th scope="col">ID</th>
       <th scope="col">Name</th>
-      <th scope="col">Code</th>
-      <th scope="col">Data avail.</th>   
-      <th scope="col">Metadata avail.</th>   
-      <th scope="col">Last updated</th>     
+     
       <th scope="col"></th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let source of sources | paginate: { id: 'server', itemsPerPage: 10, currentPage: p, totalItems: total }">
-      <td>{{source.id}}</td>
-      <td>{{source.name}}</td>
-      <td>{{source.code}}</td>
-      <td>{{source.dataavailability}}</td>
-      <td>{{source.metadataavailability}}</td>
-      <td>{{source.lastupdated}}</td>   
-      <td><a href="sources-details/{{source.id}}" class="btn btn-primary">Details</a></td>
+    <tr *ngFor="let indicator of indicators | paginate: { id: 'server', itemsPerPage: 10, currentPage: p, totalItems: total }">
+      <td>{{indicator.id}}</td>
+      <td>{{indicator.name}}</td>
+      
+      <td><a href="indicators-details/{{indicator.id}}" class="btn btn-primary">Details</a></td>
     </tr>
   </tbody>
 </table>

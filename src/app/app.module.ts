@@ -11,6 +11,7 @@ import { SourcesDetailsComponent } from './components/sources/sources-details.co
 import { CountriesComponent } from './components/countries/countries.component';
 import { CountriesDetailsComponent } from './components/countries/countries-details.component';
 import { IncomeLevelsComponent } from './components/income-levels/income-levels.component';
+import { IndicatorsComponent } from './components/indicators/indicators.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { IncomeLevelsComponent } from './components/income-levels/income-levels.
     SourcesDetailsComponent,
     CountriesComponent,
     CountriesDetailsComponent,
-    IncomeLevelsComponent
+    IncomeLevelsComponent,
+    IndicatorsComponent
   ],
   imports: [
     BrowserModule,
