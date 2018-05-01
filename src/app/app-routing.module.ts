@@ -7,6 +7,7 @@ import { CountriesComponent } from './components/countries/countries.component';
 import { CountriesDetailsComponent } from './components/countries/countries-details.component';
 import { IncomeLevelsComponent } from './components/income-levels/income-levels.component';
 import { IndicatorsComponent } from './components/indicators/indicators.component';
+import { LendingTypesComponent } from './components/lending-types/lending-types.component';
 
 const routes: Routes = [
 	{
@@ -32,6 +33,10 @@ const routes: Routes = [
 	{
 		path: 'indicators',
 		component: IndicatorsComponent
+	},
+	{
+		path: 'lending-types',
+		component: LendingTypesComponent
 	}
 ];
 
