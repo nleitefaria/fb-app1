@@ -18,7 +18,9 @@
     <tr *ngFor="let topic of topics | paginate: { id: 'server', itemsPerPage: 10, currentPage: p, totalItems: total }">
       <td>{{topic.id}}</td>
       <td>{{topic.value}}</td>
-      <td><a href="topics-details/{{topic.id}}" class="btn btn-primary">Details</a></td>
+      <td class="text-right">
+      	<a href="topics-details/{{topic.id}}" class="btn btn-primary">Details</a>
+      </td>
     </tr>
   </tbody>
 </table>

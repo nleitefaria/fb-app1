@@ -10,17 +10,15 @@
   <thead>
     <tr>     
       <th scope="col">ID</th>
-      <th scope="col">Name</th>
-     
+      <th scope="col">Name</th>    
       <th scope="col"></th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let indicator of indicators | paginate: { id: 'server', itemsPerPage: 10, currentPage: p, totalItems: total }">
       <td>{{indicator.id}}</td>
-      <td>{{indicator.name}}</td>
-      
-      <td><a href="indicators-details/{{indicator.id}}" class="btn btn-primary">Details</a></td>
+      <td>{{indicator.name}}</td>     
+      <td class="text-right"><a href="indicators-details/{{indicator.id}}" class="btn btn-primary">Details</a></td>
     </tr>
   </tbody>
 </table>

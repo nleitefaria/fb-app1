@@ -36,14 +36,11 @@ export class TopicsComponent implements OnInit {
 			response =>{
 				if(response.error) { 
 					alert('Server Error');
-				} else {
-					/*												
+				} else {																
 					this.p = page;																
 					this.total = response[0].total;
 					this.topics = response[1];				
-					this.loading = false;	
-					*/
-					alert(response);  								
+					this.loading = false;																	
 				}
 			},
 			error =>{
