@@ -16,8 +16,7 @@ export class TopicsService {
   	
   	public getTopics(page : Number):any
     { 	
-    	//return this.http.get(`${this.BASE_URL}topics?format=JSON&per_page=10&page=${page}`)
-    	return this.http.get(`https://sec-os-app5.7e14.starter-us-west-2.openshiftapps.com/departments/test`)
+    	return this.http.get(`${this.BASE_URL}topics?format=JSON&per_page=10&page=${page}`)
 			.map((response:Response) => response.json())
 			.catch((error:any) => Observable.throw(error.json().error) || 'Server Error');
 	}
