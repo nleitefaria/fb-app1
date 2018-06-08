@@ -2,9 +2,11 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.2.
 
-It is a client for the World Bank Restful API : https://datahelpdesk.worldbank.org/knowledgebase/articles/889386-developer-information-overview 
+It is a client for the World Bank [RESTful API](https://datahelpdesk.worldbank.org/knowledgebase/articles/889386-developer-information-overview)
 
 Technologies: Angular 5 + Bootstrap 4 + Firebase + Travis CI
+
+[Demo](https://fb-app1-6a922.firebaseapp.com/)
 
 ## Development server
 
