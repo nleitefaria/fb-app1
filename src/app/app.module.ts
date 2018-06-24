@@ -15,6 +15,7 @@ import { IndicatorsComponent } from './components/indicators/indicators.componen
 import { LendingTypesComponent } from './components/lending-types/lending-types.component';
 import { TopicsComponent } from './components/topics/topics.component';
 import { HomeComponent } from './components/home/home.component';
+import { IncomeLevelsCountriesComponent } from './components/income-levels/income-levels-countries.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { HomeComponent } from './components/home/home.component';
     IndicatorsComponent,
     LendingTypesComponent,
     TopicsComponent,
-    HomeComponent
+    HomeComponent,
+    IncomeLevelsCountriesComponent
   ],
   imports: [
     BrowserModule,

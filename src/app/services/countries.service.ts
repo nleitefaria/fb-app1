@@ -26,5 +26,11 @@ export class CountriesService
 			.map((response:Response) => response.json())
 			.catch((error:any) => Observable.throw(error.json().error) || 'Server Error');
 	}
+	
+	public getCountriesWithIncomeLevel(id : string, page : Number):any{		
+		return this.http.get(`${this.BASE_URL}countries?incomeLevel=${id}&format=JSON&per_page=10&page=${page}`)
+			.map((response:Response) => response.json())
+			.catch((error:any) => Observable.throw(error.json().error) || 'Server Error');
+	}
 
 }
