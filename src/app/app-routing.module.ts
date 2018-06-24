@@ -10,6 +10,7 @@ import { IncomeLevelsComponent } from './components/income-levels/income-levels.
 import { IndicatorsComponent } from './components/indicators/indicators.component';
 import { LendingTypesComponent } from './components/lending-types/lending-types.component';
 import { TopicsComponent } from './components/topics/topics.component';
+import { TopicsIndicatorsComponent } from './components/topics/topics-indicators.component';
 import { IncomeLevelsCountriesComponent } from './components/income-levels/income-levels-countries.component';
 
 const routes: Routes = [
@@ -52,6 +53,10 @@ const routes: Routes = [
 	{
 		path: 'topics',
 		component: TopicsComponent
+	},
+	{
+		path: 'topics-indicators/:id',
+		component: TopicsIndicatorsComponent
 	}
 ];
 

@@ -13,7 +13,7 @@ export class TopicsComponent implements OnInit {
     p: number = 1;
     total: number;
     loading: boolean;
-    location: string = "Sources"; 
+    location: string = "Topics"; 
 
   	constructor(private httpService : TopicsService) 
   	{ 	
