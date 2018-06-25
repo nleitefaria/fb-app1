@@ -9,6 +9,7 @@ import { CountriesDetailsComponent } from './components/countries/countries-deta
 import { IncomeLevelsComponent } from './components/income-levels/income-levels.component';
 import { IndicatorsComponent } from './components/indicators/indicators.component';
 import { LendingTypesComponent } from './components/lending-types/lending-types.component';
+import { LendingTypesCountriesComponent } from './components/lending-types/lending-types-countries.component';
 import { TopicsComponent } from './components/topics/topics.component';
 import { TopicsIndicatorsComponent } from './components/topics/topics-indicators.component';
 import { IncomeLevelsCountriesComponent } from './components/income-levels/income-levels-countries.component';
@@ -49,6 +50,10 @@ const routes: Routes = [
 	{
 		path: 'lending-types',
 		component: LendingTypesComponent
+	},
+	{
+		path: 'lending-types-countries/:id',
+		component: LendingTypesCountriesComponent
 	},
 	{
 		path: 'topics',
