@@ -1,0 +1,32 @@
+<div class="container">
+<ol class="breadcrumb">
+  <li class="breadcrumb-item"><a href="">Home</a></li>
+  <li class="breadcrumb-item"><a href="/indicators">Indicators</a></li>
+  <li class="breadcrumb-item active">{{indicator?.id}}</li>
+</ol>
+</div>
+<br>
+<div class="container">
+<table class="table">
+    <tbody>
+      <tr>
+        <td class="w-25"><b>ID: </b></td>
+        <td>{{indicator?.id}}</td>     
+      </tr>
+      <tr>
+        <td class="w-25"><b>Name: </b></td>
+        <td>{{indicator?.name}}</td>
+      </tr> 
+      <tr>
+        <td class="w-25"><b>Source: </b></td>
+        <td>{{indicator?.source.value}}</td>
+      </tr> 
+      <tr>
+        <td class="w-25"><b>Source note: </b></td>
+        <td>{{indicator?.sourceNote}}</td>
+      </tr>      
+          
+    </tbody>
+  </table>
+  <a href="/indicators" class="btn btn-primary" role="button">Back</a>
+</div>
