@@ -18,6 +18,7 @@ import { HomeComponent } from './components/home/home.component';
 import { IncomeLevelsCountriesComponent } from './components/income-levels/income-levels-countries.component';
 import { TopicsIndicatorsComponent } from './components/topics/topics-indicators.component';
 import { LendingTypesCountriesComponent } from './components/lending-types/lending-types-countries.component';
+import { IndicatorsDetailsComponent } from './components/indicators/indicators-details.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { LendingTypesCountriesComponent } from './components/lending-types/lendi
     HomeComponent,
     IncomeLevelsCountriesComponent,
     TopicsIndicatorsComponent,
-    LendingTypesCountriesComponent
+    LendingTypesCountriesComponent,
+    IndicatorsDetailsComponent
   ],
   imports: [
     BrowserModule,
