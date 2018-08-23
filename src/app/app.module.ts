@@ -19,6 +19,7 @@ import { IncomeLevelsCountriesComponent } from './components/income-levels/incom
 import { TopicsIndicatorsComponent } from './components/topics/topics-indicators.component';
 import { LendingTypesCountriesComponent } from './components/lending-types/lending-types-countries.component';
 import { IndicatorsDetailsComponent } from './components/indicators/indicators-details.component';
+import { AggregatesComponent } from './components/aggregates/aggregates.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { IndicatorsDetailsComponent } from './components/indicators/indicators-d
     IncomeLevelsCountriesComponent,
     TopicsIndicatorsComponent,
     LendingTypesCountriesComponent,
-    IndicatorsDetailsComponent
+    IndicatorsDetailsComponent,
+    AggregatesComponent
   ],
   imports: [
     BrowserModule,
