@@ -14,6 +14,7 @@ import { LendingTypesCountriesComponent } from './components/lending-types/lendi
 import { TopicsComponent } from './components/topics/topics.component';
 import { TopicsIndicatorsComponent } from './components/topics/topics-indicators.component';
 import { IncomeLevelsCountriesComponent } from './components/income-levels/income-levels-countries.component';
+import { AggregatesComponent } from './components/aggregates/aggregates.component';
 
 const routes: Routes = [
 	{ 
@@ -67,6 +68,10 @@ const routes: Routes = [
 	{
 		path: 'topics-indicators/:id',
 		component: TopicsIndicatorsComponent
+	},
+	{
+		path: 'aggregates',
+		component: AggregatesComponent
 	}
 ];
 
