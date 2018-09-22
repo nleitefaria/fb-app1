@@ -5,10 +5,17 @@
 </ol>
 </div>
 <div class="container">
+<div>
+	<select (change)="onSelectCountriesFilter($event.target.value)">
+		<option *ngFor="let country of countries"
+					[value]="country.id">{{country.name}}
+		</option>
+	</select>
+</div>
 <table class="table">
   <thead>
     <tr>     
-      <th scope="col">Country iso3 code</th>
+      <th scope="col">Country / Region code</th>
       <th scope="col">Date</th>
       <th scope="col">Value</th>
       <th scope="col"></th>
