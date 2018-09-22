@@ -10,7 +10,7 @@ import { CountriesService } from '../../services/countries.service';
 
 export class CountriesComponent implements OnInit
 {
-	countries: any;
+	  countries: any;
     p: number = 1;
     total: number;
     loading: boolean;
