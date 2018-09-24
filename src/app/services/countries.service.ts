@@ -14,6 +14,13 @@ export class CountriesService
   	{ 
   	}
   	
+  	public getAllCountries():any
+    {   
+        return this.http.get(`${this.BASE_URL}countries?format=JSON`)
+            .map((response:Response) => response.json())
+            .catch((error:any) => Observable.throw(error.json().error) || 'Server Error');
+    }
+  	
   	public getCountries(page : Number):any
     { 	
     	return this.http.get(`${this.BASE_URL}countries?format=JSON&per_page=10&page=${page}`)

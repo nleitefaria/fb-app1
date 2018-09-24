@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AggregatesService } from '../../services/aggregates.service';
+import { CountriesService } from '../../services/countries.service';
 import { Country } from '../../model/country';
 import { IncomeLevels } from '../../model/income-levels';
 
@@ -7,7 +8,7 @@ import { IncomeLevels } from '../../model/income-levels';
     selector: 'app-aggregates',
     templateUrl: './aggregates.component.html',
     styleUrls: ['./aggregates.component.css'],
-    providers: [AggregatesService]
+    providers: [AggregatesService, CountriesService]
 } )
 export class AggregatesComponent implements OnInit {
 
@@ -20,29 +21,74 @@ export class AggregatesComponent implements OnInit {
     ilcId: string;
 
     countries: Country[] = [
-        { "id": "ARB", "name": "Arab World" },
-        { "id": "BRA", "name": "Brazil" },
-        { "id": "CAN", "name": "Canada" }
     ];
     selectedCountriesFilterData: Country = this.countries[0];
 
     incomeLevelsData: IncomeLevels[] = [
-        { "id": "NY.GDP.MKTP.CD", "name": "NY.GDP.MKTP.CD" },
-        { "id": "TODO", "name": "TODO" }
+        { "id": "NY.GDP.MKTP.CD", "name": "GDP (current US$)" },
+        { "id": "1.2_ACCESS.ELECTRICITY.RURAL", "name": "Access to electricity (% of rural population)" }
     ];
     selectedIncomeLevelsFilterData: IncomeLevels = this.incomeLevelsData[0];
 
-    constructor( private httpService: AggregatesService ) {
+    constructor( private httpService: AggregatesService, private httpService1: CountriesService )
+    {
     }
 
-    ngOnInit() {
+    ngOnInit() 
+    {
         this.init();
     }
 
-    init() {
-        this.cId = 'ARB';
+    init() 
+    {
+        this.cId = 'ABW';
         this.ilcId = 'NY.GDP.MKTP.CD';
-        this.getAggregatesForPageAndCountryAndIncomeLevels( 1, 'ARB', 'NY.GDP.MKTP.CD' );
+        this.populateCountriesCombo();
+        this.getAggregatesForPageAndCountryAndIncomeLevels( 1, 'ABW', 'NY.GDP.MKTP.CD' );       
+    }
+    
+    populateCountriesCombo()
+    {
+        this.httpService1.getAllCountries().subscribe(
+                response => {
+                    if ( response.error ) {
+                        alert( 'Server Error' );
+                    } else {
+                        //this.p = page;
+                        this.total = response[0].total;
+                        this.countries = response[1];
+                        //this.loading = false;
+                        
+                        
+                        
+                        /*
+                        var c;
+                        for( var i = 0; i < response[1].length; i++ ) 
+                        {
+                            
+                                c = { 
+                                        "id": response[i].id, 
+                                        "name":response[i].name
+                                     };
+                                this.countries.push(c); 
+                                
+                                
+                            
+                            
+                            
+                            
+                        }
+                        */
+                            
+                        
+                        
+                    }
+                },
+                error => {
+                    alert( 'Server error' );
+                }
+            );
+        
     }
 
     getPage( page: number ) {
