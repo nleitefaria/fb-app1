@@ -54,34 +54,9 @@ export class AggregatesComponent implements OnInit {
                     if ( response.error ) {
                         alert( 'Server Error' );
                     } else {
-                        //this.p = page;
+                        
                         this.total = response[0].total;
-                        this.countries = response[1];
-                        //this.loading = false;
-                        
-                        
-                        
-                        /*
-                        var c;
-                        for( var i = 0; i < response[1].length; i++ ) 
-                        {
-                            
-                                c = { 
-                                        "id": response[i].id, 
-                                        "name":response[i].name
-                                     };
-                                this.countries.push(c); 
-                                
-                                
-                            
-                            
-                            
-                            
-                        }
-                        */
-                            
-                        
-                        
+                        this.countries = response[1];                                          
                     }
                 },
                 error => {
@@ -126,9 +101,7 @@ export class AggregatesComponent implements OnInit {
             error => {
                 alert( 'Server error' );
             }
-
         );
-
     }
 
     onSelectCountriesFilter( countryId )
