@@ -11,6 +11,11 @@
 					[value]="country.id">{{country.name}}
 		</option>
 	</select>
+	<select (change)="onSelectIncomeLevelCodesFilter($event.target.value)">
+		<option *ngFor="let incomeLevels of incomeLevelsData"
+					[value]="incomeLevels.id">{{incomeLevels.name}}
+		</option>
+	</select>
 </div>
 <table class="table">
   <thead>
