@@ -4,19 +4,34 @@
   <li class="breadcrumb-item active">{{location}}</li>
 </ol>
 </div>
+
+
 <div class="container">
-<div>
-	<select (change)="onSelectCountriesFilter($event.target.value)">
+  <div class="row">
+    <div class="col-sm">
+      <b>Country:</b>
+    </div>
+    <div class="col-sm">
+      <select (change)="onSelectCountriesFilter($event.target.value)" class="btn dropdown-toggle">
 		<option *ngFor="let country of countries"
 					[value]="country.id">{{country.name}}
 		</option>
 	</select>
-	<select (change)="onSelectIncomeLevelCodesFilter($event.target.value)">
+    </div>
+    <div class="col-sm">
+      <b>Indicator:</b>
+    </div>
+    <div class="col-sm">
+      <select (change)="onSelectIncomeLevelCodesFilter($event.target.value)" class="btn dropdown-toggle">
 		<option *ngFor="let incomeLevels of incomeLevelsData"
 					[value]="incomeLevels.id">{{incomeLevels.name}}
 		</option>
 	</select>
+    </div>
+  </div>
 </div>
+<br>
+<div class="container">
 <table class="table">
   <thead>
     <tr>     
