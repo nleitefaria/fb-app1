@@ -14,7 +14,7 @@
     <div class="spacer">                		   
     </div>
     <div>
-      <select (change)="onSelectCountriesFilter($event.target.value)" class="btn btn-secondary dropdown-toggle input-small">
+      <select (change)="onSelectCountriesFilter($event.target.value)" class="btn btn-secondary dropdown-toggle selectWidtSmall">
 		<option *ngFor="let country of countries"
 					[value]="country.id">{{country.name}}
 		</option>
@@ -27,12 +27,15 @@
     </div>
     <div class="spacer">                		   
     </div>
-    <div>
-      <select (change)="onSelectIncomeLevelCodesFilter($event.target.value)" class="btn btn-secondary dropdown-toggle">
+    <div *ngIf="!loadingIndicatorsCombo">
+      <select (change)="onSelectIncomeLevelCodesFilter($event.target.value)" class="btn btn-secondary dropdown-toggle selectWidtSmall">
 		<option *ngFor="let incomeLevels of incomeLevelsData"
 					[value]="incomeLevels.id">{{incomeLevels.name}}
 		</option>
 	</select>
+    </div>
+    <div *ngIf="loadingIndicatorsCombo == true">
+      Loading data ...
     </div>
   </div>
 </div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AggregatesService } from '../../services/aggregates.service';
 import { CountriesService } from '../../services/countries.service';
+import { IndicatorsService } from '../../services/indicators.service';
 import { Country } from '../../model/country';
 import { IncomeLevels } from '../../model/income-levels';
 
@@ -8,7 +9,7 @@ import { IncomeLevels } from '../../model/income-levels';
     selector: 'app-aggregates',
     templateUrl: './aggregates.component.html',
     styleUrls: ['./aggregates.component.css'],
-    providers: [AggregatesService, CountriesService]
+    providers: [AggregatesService, CountriesService, IndicatorsService]
 } )
 export class AggregatesComponent implements OnInit {
 
@@ -19,18 +20,20 @@ export class AggregatesComponent implements OnInit {
     location: string = "Aggregates";
     cId: string;
     ilcId: string;
+    
+    loadingIndicatorsCombo: boolean;
 
     countries: Country[] = [
     ];
     selectedCountriesFilterData: Country = this.countries[0];
 
+    
     incomeLevelsData: IncomeLevels[] = [
         { "id": "NY.GDP.MKTP.CD", "name": "GDP (current US$)" },
-        { "id": "1.2_ACCESS.ELECTRICITY.RURAL", "name": "Access to electricity (% of rural population)" }
     ];
     selectedIncomeLevelsFilterData: IncomeLevels = this.incomeLevelsData[0];
 
-    constructor( private httpService: AggregatesService, private httpService1: CountriesService )
+    constructor( private httpService: AggregatesService, private httpService1: CountriesService, private httpService2: IndicatorsService )
     {
     }
 
@@ -43,7 +46,9 @@ export class AggregatesComponent implements OnInit {
     {
         this.cId = 'ABW';
         this.ilcId = 'NY.GDP.MKTP.CD';
+        this.loadingIndicatorsCombo = true;
         this.populateCountriesCombo();
+        this.populateIndicatorsCombo();
         this.getAggregatesForPageAndCountryAndIncomeLevels( 1, 'ABW', 'NY.GDP.MKTP.CD' );       
     }
     
@@ -62,7 +67,31 @@ export class AggregatesComponent implements OnInit {
                 error => {
                     alert( 'Server error' );
                 }
-            );
+        );
+    }
+    
+    populateIndicatorsCombo()
+    {
+        this.httpService2.getAllIndicators().subscribe(
+                response => 
+                {
+                    if ( response.error ) 
+                    {
+                        alert( 'Server Error' );
+                    } 
+                    else 
+                    {                        
+                        this.loadingIndicatorsCombo = false;
+                        this.total = response[0].total;
+                        this.incomeLevelsData = response[1];  
+                    }
+                },
+                error => {
+                    alert( 'Server error' );
+                }
+        );
+        
+        
         
     }
 

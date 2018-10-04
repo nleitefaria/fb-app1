@@ -9,3 +9,8 @@
 	width:50px;
 	float:left;
 }
+
+.selectWidtSmall
+{
+     width:300px !important;
+}
