@@ -28,20 +28,20 @@
       <tr>
         <td class="w-25"><b>Region:</b></td>
         <td>{{country?.region.value}}</td>
-      </tr>
-      <tr>
+      </tr>	
+      <tr *ngIf="country.region.id != 'NA'">
         <td class="w-25"><b>Longitude: </b></td>
         <td>{{country?.longitude}}</td>
       </tr> 
-      <tr>
+      <tr *ngIf="country.region.id != 'NA'">
         <td class="w-25"><b>Latitude: </b></td>
         <td>{{country?.latitude}}</td>
       </tr>
-      <tr>
+      <tr *ngIf="country.region.id != 'NA'">
         <td class="w-25"><b>Income Level: </b></td>
         <td>{{country?.incomeLevel.value}}</td>
       </tr>
-      <tr>
+      <tr *ngIf="country.region.id != 'NA'">
         <td class="w-25"><b>Lending Type:</b></td>
         <td>{{country?.lendingType.value}}</td>
       </tr>          

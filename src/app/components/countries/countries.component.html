@@ -27,12 +27,12 @@
       <td>{{country.longitude}}</td>
       <td>{{country.latitude}}</td>
       <td>
-      	<p *ngIf="country.region.id != 'NA'">
+      	<span *ngIf="country.region.id != 'NA'">
 			Country
-		</p>
-		<p *ngIf="country.region.id == 'NA'">
+		</span>
+		<span *ngIf="country.region.id == 'NA'">
 			Region
-		</p>
+		</span>
       </td>
       <td class="text-right"><a href="countries-details/{{country.iso2Code}}" class="btn btn-primary btn-sm">Details</a></td>
     </tr>
