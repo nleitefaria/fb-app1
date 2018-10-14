@@ -14,6 +14,7 @@
       <th scope="col">Capital City</th>
       <th scope="col">Longitude</th>
       <th scope="col">Latitude</th>
+      <th scope="col">Country or Region</th>
       <th scope="col"></th>
     </tr>
   </thead>
@@ -25,6 +26,14 @@
       <td>{{country.capitalCity}}</td>
       <td>{{country.longitude}}</td>
       <td>{{country.latitude}}</td>
+      <td>
+      	<p *ngIf="country.region.id != 'NA'">
+			Country
+		</p>
+		<p *ngIf="country.region.id == 'NA'">
+			Region
+		</p>
+      </td>
       <td class="text-right"><a href="countries-details/{{country.iso2Code}}" class="btn btn-primary btn-sm">Details</a></td>
     </tr>
   </tbody>

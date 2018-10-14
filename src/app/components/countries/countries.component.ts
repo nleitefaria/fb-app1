@@ -14,7 +14,7 @@ export class CountriesComponent implements OnInit
     p: number = 1;
     total: number;
     loading: boolean;
-    location: string = "Countries"; 
+    location: string = "Countries and Regions"; 
 
   	constructor(private httpService : CountriesService) 
   	{ 	
